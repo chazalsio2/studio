@@ -6,6 +6,9 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
+/**
+ * La classe etudiant
+ */
 
 
 @Entity(tableName = "table_etudiant")

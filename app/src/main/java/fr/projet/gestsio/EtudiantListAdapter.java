@@ -28,7 +28,6 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import fr.ACG.gestsio.R;
 
 public class EtudiantListAdapter extends RecyclerView.Adapter<EtudiantListAdapter.EtudiantViewHolder> {
 
@@ -43,7 +42,7 @@ public class EtudiantListAdapter extends RecyclerView.Adapter<EtudiantListAdapte
         private final TextView nomItemView;
         private final TextView prenomItemView;
         private final TextView naissanceItemView;
-        public static final String EXTRA_REPLY_ETUDIANT_LA = "fr.ACG.gestsio.REPLY_ETUDIANT_LA";
+        public static final String EXTRA_REPLY_ETUDIANT_LA = "fr.projet.gestsio.REPLY_ETUDIANT_LA";
 
 
         private EtudiantViewHolder(View itemView) {

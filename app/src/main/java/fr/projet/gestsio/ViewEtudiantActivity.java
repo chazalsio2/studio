@@ -12,13 +12,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.List;
 
-import fr.ACG.gestsio.R;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-
+/**
+ *  Activite pour consulter les informations de chaque etudiant ajouter.
+ */
 
 public class ViewEtudiantActivity extends AppCompatActivity  {
     private TextView textreponse;
@@ -34,14 +35,16 @@ public class ViewEtudiantActivity extends AppCompatActivity  {
     private TextView mTextViewObservations;
     private TextView mTextViewAppreciation;
 
-    public static final String EXTRA_REPLY_VIEW = "fr.ACG.gestsio.REPLY_VIEW";
+    public static final String EXTRA_REPLY_VIEW = "fr.projet.gestsio.REPLY_VIEW";
 
 
     //@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // affectation du fichier de layout
+        /**
+         *  affectation du fichier de layout
+         */
         setContentView(R.layout.activity_view_etudiant);
 
          mTextViewNom=findViewById(R.id.textViewNom);
@@ -62,12 +65,17 @@ public class ViewEtudiantActivity extends AppCompatActivity  {
 
         loadEtudiant(etudiant);
         textreponse=findViewById(R.id.textViewAppreciation);
-//retrofilt builder
+/**
+ *  retrofilt builder
+ */
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://165.169.241.28:31195/MyApi/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-//instance pour interface
+
+/**
+ * instance pour interface
+ */
         InterAppreciation interAppreciation = retrofit.create(InterAppreciation.class);
         Call<List<Appreciation>> call = interAppreciation.getAppreciation(etudiant.getIdEtudiant());
 
@@ -100,9 +108,9 @@ public class ViewEtudiantActivity extends AppCompatActivity  {
             }
         });
 
-
-        //gestion de la modification
-
+/**
+     *   gestion de la modification
+*/
         final Button bm = findViewById(R.id.button_modifier);
         bm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,7 +124,9 @@ public class ViewEtudiantActivity extends AppCompatActivity  {
         });
 
 
-        //gestion de la suppression d'un étudiant
+        /**
+         * gestion de la suppression d'un étudiant
+         */
 
         findViewById(R.id.button_supprimer).setOnClickListener(new View.OnClickListener() {
             @Override

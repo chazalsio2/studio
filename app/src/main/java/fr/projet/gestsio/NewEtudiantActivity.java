@@ -29,15 +29,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Calendar;
 
-import fr.ACG.gestsio.R;
 
 /**
- * Activity for entering a etudiant.
+ *  Activite pour entrer une nouvelle etudiant.
  */
 
 public class NewEtudiantActivity extends AppCompatActivity {
 
-    public static final String EXTRA_REPLY_NEW = "fr.ACG.gestsio.REPLY_NEW";
+    public static final String EXTRA_REPLY_NEW = "fr.projet.gestsio.REPLY_NEW";
 
     private EditText mEditNomView;
     private EditText mEditPrenomView;
